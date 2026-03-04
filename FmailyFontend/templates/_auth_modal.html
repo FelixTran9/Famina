@@ -1,0 +1,59 @@
+    <div id="authModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 relative">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <div id="loginForm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Đăng nhập</h2>
+                <form onsubmit="event.preventDefault(); login();">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="loginEmail" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Mật khẩu</label>
+                        <input type="password" id="loginPassword" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <button type="submit" class="w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition mb-4">
+                        Đăng nhập
+                    </button>
+                    <p class="text-center text-gray-600">
+                        Chưa có tài khoản? 
+                        <button type="button" onclick="switchToRegister()" class="text-cyan-600 font-semibold hover:text-cyan-700">Đăng ký ngay</button>
+                    </p>
+                </form>
+            </div>
+            
+            <div id="registerForm" class="hidden">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Đăng ký</h2>
+                <form onsubmit="event.preventDefault(); register();">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Họ và tên</label>
+                        <input type="text" id="registerName" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="registerEmail" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Số điện thoại</label>
+                        <input type="tel" id="registerPhone" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2">Mật khẩu</label>
+                        <input type="password" id="registerPassword" required class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-cyan-500 focus:outline-none">
+                    </div>
+                    <button type="submit" class="w-full bg-cyan-600 text-white py-3 rounded-lg font-semibold hover:bg-cyan-700 transition mb-4">
+                        Đăng ký
+                    </button>
+                    <p class="text-center text-gray-600">
+                        Đã có tài khoản? 
+                        <button type="button" onclick="switchToLogin()" class="text-cyan-600 font-semibold hover:text-cyan-700">Đăng nhập</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>

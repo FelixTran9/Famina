@@ -1,0 +1,113 @@
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
+            <div class="flex items-center space-x-4">
+                <span class="text-gray-600">📞 Hotline: 037 703 8778</span>
+                <span class="hidden md:inline text-gray-600">✉️ cskh@famima.vn</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="pages/about.html" class="text-gray-600 hover:text-cyan-600">Về FamilyMart</a>
+                <a href="pages/policy.html" class="text-gray-600 hover:text-cyan-600">Chính sách</a>
+                <a href="pages/recruitment.html" class="text-gray-600 hover:text-cyan-600">Tuyển dụng</a>
+                <div id="userSection">
+                    <button onclick="showLoginModal()" class="text-cyan-600 font-semibold hover:text-cyan-700">Đăng nhập</button>
+                </div>
+                <div id="userLoggedIn" class="hidden relative">
+                    <button onclick="toggleUserMenu()" class="flex items-center space-x-2 text-gray-700 hover:text-cyan-600">
+                        <div class="w-8 h-8 bg-cyan-600 rounded-full flex items-center justify-center text-white font-semibold">
+                            <span id="userInitial">U</span>
+                        </div>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="userMenu" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-2xl border border-gray-200 z-50">
+                        <div class="p-4 border-b">
+                            <p class="font-semibold text-gray-800" id="userName">User Name</p>
+                            <p class="text-sm text-gray-600" id="userEmail">user@email.com</p>
+                        </div>
+                        <div class="py-2">
+                            <a href="pages/account.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                Tài khoản của tôi
+                            </a>
+                            <a href="pages/orders.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                                </svg>
+                                Đơn hàng của tôi
+                            </a>
+                            <a href="pages/cart.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                Giỏ hàng
+                            </a>
+                            <a href="#" onclick="event.preventDefault(); logout();" class="block px-4 py-2 text-red-600 hover:bg-gray-100">
+                                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                </svg>
+                                Đăng xuất
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <a href="index.html" class="flex items-center cursor-pointer">
+                    <img src="https://famima.vn/_next/image?url=%2Fimages%2Flogo.png&w=256&q=75" alt="FamilyMart" class="h-12">
+                </a>
+                
+                <div class="hidden md:flex flex-1 max-w-xl mx-8">
+                    <input id="searchInput" type="text" placeholder="Nhập tên sản phẩm, từ khóa cần tìm" class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:border-cyan-500">
+                    <button class="bg-cyan-500 text-white px-6 py-2 rounded-r-lg hover:bg-cyan-600">
+                        Tìm kiếm
+                    </button>
+                </div>
+
+                <a href="pages/cart.html" class="relative p-2 hover:bg-gray-100 rounded-lg">
+                    <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <span id="cartBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-cyan-600 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center space-x-8 py-4 relative">
+                <div class="relative">
+                    <button onclick="toggleDropdown(event)" class="flex items-center space-x-2 font-semibold hover:text-cyan-100">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <span>Danh mục sản phẩm</span>
+                    </button>
+                    
+                    <div id="dropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-2xl border border-gray-200 z-50">
+                        <div class="py-2">
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Đồ chiên</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Lẩu</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Bánh hấp</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Thức uống Fami</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Omusubi</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Sushi</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Cơm hộp</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700 border-b border-gray-100">Sandwich</a>
+                            <a href="pages/special-offers.html" class="category-item block px-4 py-3 text-gray-700">Bánh mì</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="pages/special-offers.html" class="font-medium hover:text-cyan-100">Ưu đãi đặc biệt</a>
+                <a href="pages/stores.html" class="font-medium hover:text-cyan-100">Cửa hàng</a>
+                <a href="pages/news.html" class="font-medium hover:text-cyan-100">Tin tức</a>
+            </div>
+        </div>
+    </nav>
